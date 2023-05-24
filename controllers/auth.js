@@ -192,17 +192,6 @@ exports.updatePassword = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res)
 });
 
-// Refresh Token
-exports.refreshToken = asyncHandler(async (req, res, next) => {
-  // const user = await User.findById(req.user.id)
-  // console.log(user)
-  const refresh = req.cookies.refresh
-  if (!refresh) {
-    return next(new ErrorHandler('Refresh Token Missing', 401))
-  }
-  sendTokenResponse(user, 200, res)
-})
-
 
 
 // ===================
